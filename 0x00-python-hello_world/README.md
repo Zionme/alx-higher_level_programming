@@ -1,1 +1,1 @@
-a Python script that prints “The Zen of Python”, by TimPeters, followed by a new line
+a function in C that checks if a singly linked list has a cycle in it
