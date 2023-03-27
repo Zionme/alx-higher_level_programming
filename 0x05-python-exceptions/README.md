@@ -1,1 +1,1 @@
-a function that prints an integer with "{:d}".format().
+a function that prints the first x elements of a list and only integers.
