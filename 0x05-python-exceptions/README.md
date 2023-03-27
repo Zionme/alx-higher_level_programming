@@ -1,1 +1,1 @@
-a function that divides element by element 2 lists.
+a function that raises a type exception.
