@@ -1,1 +1,1 @@
-a function that raises a type exception.
+a function that raises a name exception with a message
