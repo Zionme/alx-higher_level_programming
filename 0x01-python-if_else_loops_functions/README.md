@@ -1,1 +1,1 @@
-This program will assign a random signed number to the variable number each time it is executed.
+ a program that prints the ASCII alphabet, in lowercase, not followed by a new line.
