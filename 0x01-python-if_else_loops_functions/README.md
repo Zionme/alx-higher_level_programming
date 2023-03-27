@@ -1,1 +1,1 @@
-a program that prints all possible different combinations of two digits.
+a function that checks for lowercase character.
