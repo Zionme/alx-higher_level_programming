@@ -1,1 +1,1 @@
- learning errors and exceptions in python
+a function that prints x elements of a list
