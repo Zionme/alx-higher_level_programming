@@ -1,1 +1,1 @@
-Learning how to use string formatters, more control flow tools in python3
+This program will assign a random signed number to the variable number each time it is executed.
