@@ -1,1 +1,1 @@
-a function in C that inserts a number into a sorted singly linked list.
+a program that prints the ASCII alphabet, in reverse order, alternating lowercase and uppercase
