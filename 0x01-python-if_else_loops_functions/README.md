@@ -1,1 +1,1 @@
-a program that prints the ASCII alphabet, in reverse order, alternating lowercase and uppercase
+a function that creates a copy of the string, removing the character at the position n
