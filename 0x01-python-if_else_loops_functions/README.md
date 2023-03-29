@@ -1,1 +1,1 @@
-a function that prints the last digit of a number
+a function that computes a to the power of b and return the value.
