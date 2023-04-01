@@ -1,1 +1,1 @@
-a function that removes all characters c and C from a string.
+a function that prints a matrix of integers
