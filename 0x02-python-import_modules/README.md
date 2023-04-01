@@ -1,1 +1,1 @@
-a program that prints #pythoniscool, followed by a new line, in the standard output.
+Write the Python function def magic_calculation(a, b)
