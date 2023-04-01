@@ -1,1 +1,1 @@
- a program that prints the result of the addition of all arguments
+ a program that prints all the names defined by the compiled module hidden_4.pyc
