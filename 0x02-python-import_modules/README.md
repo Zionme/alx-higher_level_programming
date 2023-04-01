@@ -1,1 +1,1 @@
-Write the Python function def magic_calculation(a, b)
+a program that prints the alphabet in uppercase, followed by a new line.
