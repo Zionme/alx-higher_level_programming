@@ -1,1 +1,1 @@
- a function that returns a list with all values multiplied by a number without using any loops.
+a function def roman_to_int(roman_string): that converts a Roman numeral to an integer
