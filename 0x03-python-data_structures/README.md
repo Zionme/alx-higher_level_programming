@@ -1,1 +1,1 @@
-a function that returns a tuple with the length of a string and its first character.
+ a function that finds the biggest integer of a list.
