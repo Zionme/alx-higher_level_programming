@@ -1,1 +1,1 @@
-a function that returns a new dictionary with all values multiplied by 2
+a function that returns a key with the biggest integer value.
