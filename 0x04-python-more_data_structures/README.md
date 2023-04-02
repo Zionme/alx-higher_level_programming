@@ -1,1 +1,1 @@
-learning more data structures, lambda, filter, reduce and map
+a function that computes the square value of all integers of a matrix.
