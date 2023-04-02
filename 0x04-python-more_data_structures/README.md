@@ -1,1 +1,1 @@
-a function that prints a dictionary by ordered keys.
+a function that replaces or adds key/value in a dictionary.
