@@ -1,1 +1,1 @@
-Complete the source code in order to switch value of a and b
+a function in C that checks if a singly linked list is a palindrome.
