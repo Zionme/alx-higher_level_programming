@@ -1,1 +1,1 @@
-a function that deletes a key in a dictionary.
+a function that returns a new dictionary with all values multiplied by 2
