@@ -1,1 +1,1 @@
- a function that prints My name is <first name> <last name>
+a function that prints a square with the character #
