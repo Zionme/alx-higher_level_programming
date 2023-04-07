@@ -1,1 +1,1 @@
-a function that adds 2 integers
+ a function that divides all elements of a matrix.
