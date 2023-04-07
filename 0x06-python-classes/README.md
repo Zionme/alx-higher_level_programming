@@ -1,1 +1,1 @@
-learning python classes and objects, object oriented programming.
+an empty class Square that defines a square
