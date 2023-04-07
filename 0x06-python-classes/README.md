@@ -1,1 +1,1 @@
-an empty class Square that defines a square
+a class Square that defines a square
