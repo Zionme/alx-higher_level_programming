@@ -1,1 +1,1 @@
- a function that divides all elements of a matrix.
+ a function that prints My name is <first name> <last name>
