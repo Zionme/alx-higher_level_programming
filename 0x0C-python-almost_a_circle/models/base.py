@@ -9,6 +9,7 @@ if not os.path.exists('models'):
     os.makedirs('models')
     open('models/__init__.py', 'w').close()
 
+
 class Base:
     # Private class attribute __nb_objects
     __nb_objects = 0
@@ -32,3 +33,23 @@ class Base:
         else:
             # Return JSON string representation of list_dictionaries
             return json.dumps(list_dictionaries)
+
+    # Class method to save list_objs to a file
+    @classmethod
+    def save_to_file(cls, list_objs):
+        # Get the class name
+        class_name = cls.__name__
+        # Create a list to store dictionaries of list_objs
+        list_dicts = []
+        if list_objs is not None:
+            # Convert list_objs to list of dictionaries
+            for obj in list_objs:
+                list_dicts.append(obj.to_dictionary())
+
+        # Convert list_dicts to JSON string
+        json_string = cls.to_json_string(list_dicts)
+
+        # Write the JSON string to a file
+        filename = "{}.json".format(class_name)
+        with open(filename, 'w') as file:
+            file.write(json_string)
