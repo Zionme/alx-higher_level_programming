@@ -77,6 +77,13 @@ class Rectangle(Base):
         """
         return self.__width * self.__height
 
+    def display(self):
+        """
+        Prints the rectangle with '#' characters in stdout.
+        """
+        for i in range(self.__height):
+            print("#" * self.__width)
+
     # Property decorators for accessing attributes using getters and setters
     width = property(get_width, set_width)
     height = property(get_height, set_height)
