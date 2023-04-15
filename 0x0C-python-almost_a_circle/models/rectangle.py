@@ -108,20 +108,28 @@ class Rectangle(Base):
                                                        self.__width,
                                                        self.__height)
 
-    def update(self, *args):
+        def update(self, *args, **kwargs):
         """
-        Updates attributes of the Rectangle using no-keyword arguments.
+        Updates the Rectangle using no-keyword and key-worded arguments.
         Args:
             *args: Arguments in the order: id, width, height, x, y.
+            **kwargs: Key-worded argument to be updated.
         """
-        num_args = len(args)
-        if num_args >= 1:
-            self.id = args[0]
-        if num_args >= 2:
-            self.width = args[1]
-        if num_args >= 3:
-            self.height = args[2]
-        if num_args >= 4:
-            self.x = args[3]
-        if num_args >= 5:
-            self.y = args[4]
+        if args:
+            # If *args exists and is not empty, update attributes using
+            # no-keyword arguments
+            num_args = len(args)
+            if num_args >= 1:
+                self.id = args[0]
+            if num_args >= 2:
+                self.width = args[1]
+            if num_args >= 3:
+                self.height = args[2]
+            if num_args >= 4:
+                self.x = args[3]
+            if num_args >= 5:
+                self.y = args[4]
+        if kwargs:
+            # Update attributes using key-worded arguments
+            for key, value in kwargs.items():
+                setattr(self, key, value)
