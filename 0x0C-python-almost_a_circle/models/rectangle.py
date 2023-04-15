@@ -69,6 +69,12 @@ class Rectangle(Base):
             raise ValueError("y must be >= 0.")
         self.__y = y
 
+    # Property decorators for accessing attributes using getters and setters
+    width = property(get_width, set_width)
+    height = property(get_height, set_height)
+    x = property(get_x, set_x)
+    y = property(get_y, set_y)
+
     def area(self):
         """
         Calculates and returns the area of the rectangle.
@@ -102,8 +108,20 @@ class Rectangle(Base):
                                                        self.__width,
                                                        self.__height)
 
-    # Property decorators for accessing attributes using getters and setters
-    width = property(get_width, set_width)
-    height = property(get_height, set_height)
-    x = property(get_x, set_x)
-    y = property(get_y, set_y)
+    def update(self, *args):
+        """
+        Updates attributes of the Rectangle using no-keyword arguments.
+        Args:
+            *args: Arguments in the order: id, width, height, x, y.
+        """
+        num_args = len(args)
+        if num_args >= 1:
+            self.id = args[0]
+        if num_args >= 2:
+            self.width = args[1]
+        if num_args >= 3:
+            self.height = args[2]
+        if num_args >= 4:
+            self.x = args[3]
+        if num_args >= 5:
+            self.y = args[4]
