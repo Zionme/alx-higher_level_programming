@@ -84,6 +84,17 @@ class Rectangle(Base):
         for i in range(self.__height):
             print("#" * self.__width)
 
+    def __str__(self):
+        """
+        Returns the string representation of the Rectangle instance.
+        Returns:
+            str: The string representation of the Rectangle instance.
+        """
+        return "[Rectangle] ({}) {}/{} - {}/{}".format(self.id,
+                                                       self.__x, self.__y,
+                                                       self.__width,
+                                                       self.__height)
+
     # Property decorators for accessing attributes using getters and setters
     width = property(get_width, set_width)
     height = property(get_height, set_height)
