@@ -34,6 +34,16 @@ class Base:
             # Return JSON string representation of list_dictionaries
             return json.dumps(list_dictionaries)
 
+    # Static method to convert JSON string to list of dictionaries
+    @staticmethod
+    def from_json_string(json_string):
+        if json_string is None or json_string == "":
+            # Return an empty list for None or empty json_string
+            return []
+        else:
+            # Return the list represented by json_string
+            return json.loads(json_string)
+
     # Class method to save list_objs to a file
     @classmethod
     def save_to_file(cls, list_objs):
