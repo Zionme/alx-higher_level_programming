@@ -27,6 +27,28 @@ class Square(Rectangle):
         self._width = value  # Assign value to width
         self._height = value  # Assign value to height
 
+    def update(self, *args, **kwargs):
+        """
+        Update the attributes of the Square object with *args and/or **kwargs.
+        """
+        if args:
+            if len(args) > 4:
+                raise ValueError("update() takes at most 4 positional arguments
+                                 (id, size, x, y)")
+            self.id = args[0] if args[0] is not None else self.id
+            self.size = args[1] if len(args) > 1 else self.size
+            self.x = args[2] if len(args) > 2 else self.x
+            self.y = args[3] if len(args) > 3 else self.y
+        else:
+            if 'id' in kwargs:
+                self.id = kwargs['id'] if kwargs['id'] is not None else self.id
+            if 'size' in kwargs:
+                self.size = kwargs['size']
+            if 'x' in kwargs:
+                self.x = kwargs['x']
+            if 'y' in kwargs:
+                self.y = kwargs['y']
+
     def __str__(self):
         """
         Return a string representation of the Square object.
