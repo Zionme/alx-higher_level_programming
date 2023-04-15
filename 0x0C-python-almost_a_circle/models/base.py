@@ -1,6 +1,7 @@
 #!/usr/bin/python3
 """Defines a base model class."""
 import os
+import json
 
 
 # Create a folder named models with an empty file __init__.py inside
@@ -21,3 +22,13 @@ class Base:
             # Increment __nb_objects and assign the new value to id
             Base.__nb_objects += 1
             self.id = Base.__nb_objects
+
+    # Static method to convert list of dictionaries to JSON string
+    @staticmethod
+    def to_json_string(list_dictionaries):
+        if list_dictionaries is None or len(list_dictionaries) == 0:
+            # Return "[]" for None or empty list_dictionaries
+            return "[]"
+        else:
+            # Return JSON string representation of list_dictionaries
+            return json.dumps(list_dictionaries)
