@@ -94,3 +94,48 @@ class Base:
                 return [cls.create(**d) for d in list_dicts]
         except IOError:
             return []
+
+    # Static method to convert list of dictionaries to CSV string
+    @staticmethod
+    def to_csv_string(list_dictionaries):
+        if list_dictionaries is None or len(list_dictionaries) == 0:
+            # Return an empty string for None or empty list_dictionaries
+            return ""
+        else:
+            # Create a CSV string from list_dictionaries
+            # The format of the CSV string depends on the class name
+            class_name = list_dictionaries[0].get('__class__')
+            if class_name == "Rectangle":
+                fieldnames = ['id', 'width', 'height', 'x', 'y']
+            elif class_name == "Square":
+                fieldnames = ['id', 'size', 'x', 'y']
+
+            # Create a CSV writer and write the fieldnames to the CSV string
+            csv_string = ""
+            writer = csv.DictWriter(csv_string, fieldnames=fieldnames)
+            writer.writeheader()
+
+            # Write each dictionary as a row in the CSV string
+            for dictionary in list_dictionaries:
+                writer.writerow(dictionary)
+
+            return csv_string
+
+    # Static method to convert CSV string to list of dictionaries
+    @staticmethod
+    def from_csv_string(csv_string):
+        if csv_string is None or csv_string == "":
+            # Return an empty list for None or empty csv_string
+            return []
+        else:
+            # Read the CSV string and convert it to a list of dictionaries
+            # The format of the CSV string depends on the class name
+            list_dicts = []
+            class_name = csv_string[0].get('__class__')
+            if class_name == "Rectangle":
+                fieldnames = ['id', 'width', 'height', 'x', 'y']
+            elif class_name == "Square":
+                fieldnames = ['id', 'size', 'x', 'y']
+
+            # Create a CSV reader and read the fieldnames from the CSV string
+            reader = csv.DictReader(csv_string, fieldnames=fieldnames)
