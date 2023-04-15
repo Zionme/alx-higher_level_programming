@@ -63,3 +63,18 @@ class Base:
         filename = "{}.json".format(class_name)
         with open(filename, 'w') as file:
             file.write(json_string)
+
+    # Class method to create an instance with all attributes already set
+    @classmethod
+    def create(cls, **dictionary):
+        # Create a "dummy" instance with mandatory attributes
+        if cls.__name__ == "Rectangle":
+            dummy = cls(1, 1)
+        elif cls.__name__ == "Square":
+            dummy = cls(1)
+
+        # Update the "dummy" instance with real values from dictionary
+        dummy.update(**dictionary)
+
+        # Return the "dummy" instance with all attributes set
+        return dummy
