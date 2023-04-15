@@ -15,7 +15,7 @@ class Rectangle(Base):
             y (int, optional): y-coordinate of the rectangle. Defaults to 0.
             id (int, optional): ID of the rectangle. Defaults to None.
         """
-        super().__init__(id) # Call the super class with id
+        super().__init__(id)  # Call the super class with id
         self.__width = None
         self.__height = None
         self.__x = None
@@ -69,9 +69,16 @@ class Rectangle(Base):
             raise ValueError("y must be >= 0.")
         self.__y = y
 
+    def area(self):
+        """
+        Calculates and returns the area of the rectangle.
+        Returns:
+            int: The area of the rectangle.
+        """
+        return self.__width * self.__height
+
     # Property decorators for accessing attributes using getters and setters
     width = property(get_width, set_width)
     height = property(get_height, set_height)
     x = property(get_x, set_x)
     y = property(get_y, set_y)
-
