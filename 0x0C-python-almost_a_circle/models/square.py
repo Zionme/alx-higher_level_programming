@@ -1,70 +1,85 @@
 #!/usr/bin/python3
+# square.py
+# Brennan D Baraban <375@holbertonschool.com>
 """Defines a square class."""
 from models.rectangle import Rectangle
 
 
 class Square(Rectangle):
+    """Represent a square."""
+
     def __init__(self, size, x=0, y=0, id=None):
-        """
-        Initialize a Square object with given size, x, y, and id.
+        """Initialize a new Square.
+
+        Args:
+            size (int): The size of the new Square.
+            x (int): The x coordinate of the new Square.
+            y (int): The y coordinate of the new Square.
+            id (int): The identity of the new Square.
         """
         super().__init__(size, size, x, y, id)
-        # Call the super class with id, x, y, width and height
-        self.width = size  # Assign size to width
-        self.height = size  # Assign size to height
 
     @property
     def size(self):
-        """Return the size of the Square."""
-        return self._width  # Use width as size
+        """Get/set the size of the Square."""
+        return self.width
 
     @size.setter
     def size(self, value):
-        """
-        Set the size of the Square with the same value for width and height.
-        """
-        self._validate_positive_value(value, "size")  # Validate the value
-        self._width = value  # Assign value to width
-        self._height = value  # Assign value to height
+        self.width = value
+        self.height = value
 
     def update(self, *args, **kwargs):
+        """Update the Square.
+
+        Args:
+            *args (ints): New attribute values.
+                - 1st argument represents id attribute
+                - 2nd argument represents size attribute
+                - 3rd argument represents x attribute
+                - 4th argument represents y attribute
+            **kwargs (dict): New key/value pairs of attributes.
         """
-        Update the attributes of the Square object with *args and/or **kwargs.
-        """
-        if args:
-            if len(args) > 4:
-                raise ValueError("update() takes at most 4 positional arguments
-                                 (id, size, x, y)")
-            self.id = args[0] if args[0] is not None else self.id
-            self.size = args[1] if len(args) > 1 else self.size
-            self.x = args[2] if len(args) > 2 else self.x
-            self.y = args[3] if len(args) > 3 else self.y
-        else:
-            if 'id' in kwargs:
-                self.id = kwargs['id'] if kwargs['id'] is not None else self.id
-            if 'size' in kwargs:
-                self.size = kwargs['size']
-            if 'x' in kwargs:
-                self.x = kwargs['x']
-            if 'y' in kwargs:
-                self.y = kwargs['y']
+        if args and len(args) != 0:
+            a = 0
+            for arg in args:
+                if a == 0:
+                    if arg is None:
+                        self.__init__(self.size, self.x, self.y)
+                    else:
+                        self.id = arg
+                elif a == 1:
+                    self.size = arg
+                elif a == 2:
+                    self.x = arg
+                elif a == 3:
+                    self.y = arg
+                a += 1
+
+        elif kwargs and len(kwargs) != 0:
+            for k, v in kwargs.items():
+                if k == "id":
+                    if v is None:
+                        self.__init__(self.size, self.x, self.y)
+                    else:
+                        self.id = v
+                elif k == "size":
+                    self.size = v
+                elif k == "x":
+                    self.x = v
+                elif k == "y":
+                    self.y = v
 
     def to_dictionary(self):
-        """
-        Return a dictionary representation of the Square object.
-        """
-        return {'id': self.id, 'size': self.size, 'x': self.x, 'y': self.y}
+        """Return the dictionary representation of the Square."""
+        return {
+            "id": self.id,
+            "size": self.width,
+            "x": self.x,
+            "y": self.y
+        }
 
     def __str__(self):
-        """
-        Return a string representation of the Square object.
-        """
-        return f"[Square] ({self.id}) {self.x}/{self.y} - {self.width}"
-
-    # Additional helper method for value validation
-    def _validate_positive_value(self, value, attr):
-        """
-        Validate that the given value is a positive integer.
-        """
-        if not isinstance(value, int) or value <= 0:
-            raise ValueError(f"{attr} must be a positive integer")
+        """Return the print() and str() representation of a Square."""
+        return "[Square] ({}) {}/{} - {}".format(self.id, self.x, self.y,
+                                                 self.width)
