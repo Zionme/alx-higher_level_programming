@@ -1,1 +1,1 @@
-learning object relational mapping in python
+learning object relational mappers, SQL Alchemy
