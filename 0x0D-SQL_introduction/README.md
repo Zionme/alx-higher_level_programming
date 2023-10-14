@@ -1,1 +1,0 @@
-learning database and sql
